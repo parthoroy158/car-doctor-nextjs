@@ -59,7 +59,13 @@ const Navbar = () => {
                     {navMenu()}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end gap-3">
+                <Link href='/register'>
+                    Register
+                </Link>
+                <Link href='/logIn'>
+                    Log in
+                </Link>
                 <a className="btn btn-outline">Appointment</a>
             </div>
         </div>
