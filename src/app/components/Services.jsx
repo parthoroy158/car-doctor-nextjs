@@ -14,7 +14,7 @@ const Services = async () => {
             {
                 data.map(item => {
                     return (
-                        <div key={item._id} className='col-span-4 shadow-md rounded-xl object-cover'>
+                        <div key={item._id} className='col-span-4 shadow-md rounded-xl object-cover hover:-translate-y-2 duration-300'>
                             <div className='p-5  '>
                                 <figure className='w-full h-full flex justify-center items-center'>
                                     <Image className=' h-full w-full object-fill' src={item.img} width={314} height={208}></Image>
