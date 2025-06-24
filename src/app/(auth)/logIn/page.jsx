@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import LoginForm from './components/LoginForm';
 
 const LogIn = () => {
 
@@ -10,16 +11,7 @@ const LogIn = () => {
                     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <div className="card-body">
                             <p className='text-center text-3xl font-bold '>Log In</p>
-                            <form>
-                                <fieldset className="fieldset">
-                                    <label className="label">Email</label>
-                                    <input type="email" className="input" placeholder="Email" />
-                                    <label className="label">Password</label>
-                                    <input type="password" className="input" placeholder="Password" />
-                                    <div><a className="link link-hover">Forgot password?</a></div>
-                                    <button className="btn btn-neutral mt-4">Login</button>
-                                </fieldset>
-                            </form>
+                            <LoginForm></LoginForm>
                             <div className='divider'>Or</div>
                             <div className='flex gap-2 justify-center'>
                                 <button className="btn bg-[#1A77F2] text-white border-[#005fd8] rounded-full">
