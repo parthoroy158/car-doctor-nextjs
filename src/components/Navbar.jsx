@@ -1,10 +1,14 @@
+"use client"
+import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 const Navbar = () => {
-
+    const { data: session, status } = useSession()
+    console.log(session)
     const navMenu = () => {
+
         return (
             <>
                 <li>
@@ -60,15 +64,23 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-3">
-                <Link href='/register'>
-                    Register
-                </Link>
-                <Link href='/logIn'>
-                    Log in
-                </Link>
+                {
+                    session ?
+                        <li onClick={() => signOut()}> Log Out</li>
+                        :
+                        <div className='flex gap-1'>
+                            <Link href='/register'>
+                                Register
+                            </Link>
+                            <Link href='/logIn'>
+                                Log in
+                            </Link>
+
+                        </div>
+                }
                 <a className="btn btn-outline">Appointment</a>
             </div>
-        </div>
+        </div >
     );
 };
 
