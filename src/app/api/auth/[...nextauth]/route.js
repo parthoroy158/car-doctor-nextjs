@@ -1,6 +1,7 @@
 import { logInUser } from "@/app/actions/auth/logInUser"
 import NextAuth from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
+import GoogleProvider from "next-auth/providers/google";
 
 
 
@@ -42,6 +43,10 @@ export const authOptions = {
                 // Return null if user data could not be retrieved
                 return null
             }
+        }),
+        GoogleProvider({
+            clientId: process.env.GOOGLE_CLIENT_ID,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET
         })
     ],
     pages: {

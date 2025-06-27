@@ -66,9 +66,12 @@ const Navbar = () => {
             <div className="navbar-end gap-3">
                 {
                     session ?
-                        <li onClick={() => signOut()}> Log Out</li>
+                        <>
+                            <p>{session.user.name}</p>
+                            <button className='btn btn-secondary' onClick={() => signOut()}> Log Out</button>
+                        </>
                         :
-                        <div className='flex gap-1'>
+                        <div className='flex gap-2'>
                             <Link href='/register'>
                                 Register
                             </Link>
